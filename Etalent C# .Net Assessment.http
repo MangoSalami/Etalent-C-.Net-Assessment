@@ -1,0 +1,6 @@
+@Etalent_C__.Net_Assessment_HostAddress = http://localhost:5246
+
+GET {{Etalent_C__.Net_Assessment_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
