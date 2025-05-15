@@ -5,7 +5,7 @@ This is a simple .NET Core Web API developed as part of the Etalent C# assessmen
 ---
 # HOW TO RUN Application
      pull the code
-`    remove current migrations 
+     remove current migrations 
           -run on Terminal 
           -rm -r Migrations
 --Create new migrations
