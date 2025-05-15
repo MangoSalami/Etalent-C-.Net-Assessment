@@ -4,10 +4,10 @@ This is a simple .NET Core Web API developed as part of the Etalent C# assessmen
 
 ---
 # HOW TO RUN Application
---pull the code
---remove current migrations 
-     run on Terminal 
-         rm -r Migrations
+     --pull the code
+`    --remove current migrations 
+          run on Terminal 
+          rm -r Migrations
 --Create new migrations
     run on Terminal 
            dotnet ef migrations add InitialCreate
