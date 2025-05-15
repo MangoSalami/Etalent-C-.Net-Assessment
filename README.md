@@ -13,9 +13,9 @@ This is a simple .NET Core Web API developed as part of the Etalent C# assessmen
           dotnet ef migrations add InitialCreate
           dotnet ef database update
 # RUN THE APPLICATION
-IF USING VSCODE
-  run   Terminal
-     : dotnet run
+     IF USING VSCODE
+       run   Terminal
+          : dotnet run
 
 # HOW TO RUN TESTS
     run on Terminal 
