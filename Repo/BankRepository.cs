@@ -37,15 +37,19 @@ namespace Etalent_C__.Net_Assessment.Repo
                 .FirstOrDefaultAsync(a => a.AccountNumber == accountNumber);
         }
 
-        public async Task<bool> Withdraw(int accountId, decimal amount)
+        public async Task<WithdrawDTO> Withdraw(int accountId, decimal amount)
         {
             var account = await GetAccountByAccountNumber(accountId);
-            if (account == null) { return false; } 
-            if(account.Status == AccountStatus.Inactive || amount <= 0 || amount > account.AvailableBalance)
-                return false;
+            if (account == null) { return new WithdrawDTO { AccountNumber=null,amount=amount ,message="account does not exist"}; }
+            if (account.Status == AccountStatus.Inactive) {
+                return new WithdrawDTO { AccountNumber = null, amount = amount, message = "account is not active" };
+            } if (amount <= 0) {
+                return new WithdrawDTO { AccountNumber = null, amount = amount, message = "amount is less than zero" };
+            } if(amount > account.AvailableBalance) { return new WithdrawDTO { AccountNumber = null, amount = amount, message = "amount is greater than balance" }; }
+             
 
             if (account.Type == AccountType.FixedDeposit && amount != account.AvailableBalance)
-                return false;
+            { return new WithdrawDTO { AccountNumber = null, amount = amount, message = "Account is fixed deposit and amount is not equal to the balance" }; }
 
             account.AvailableBalance -= amount;
 
@@ -58,7 +62,7 @@ namespace Etalent_C__.Net_Assessment.Repo
             });
 
             await _context.SaveChangesAsync();
-            return true;
+            return new WithdrawDTO { AccountNumber=account.AccountNumber,amount=amount,message="withdrawal successful"};
         }
         public async Task<LoginResponseDTO?> Login(string email)
         {
@@ -66,7 +70,12 @@ namespace Etalent_C__.Net_Assessment.Repo
             var user = await _context.AccountHolders
                 .FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
 
-            if (user == null) return null;
+            if (user == null) return new LoginResponseDTO
+            {
+                Token = null,
+                Expires = DateTime.Now,
+                Message="User doenst exist"
+            }; ;
 
          
 
@@ -95,7 +104,8 @@ namespace Etalent_C__.Net_Assessment.Repo
             return new LoginResponseDTO
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
-                Expires = expires
+                Expires = expires,
+                Message = "Success"
             };
         }
 

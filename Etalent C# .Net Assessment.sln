@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etalent C# .Net Assessment", "Etalent C# .Net Assessment.csproj", "{B8D2EE1F-BB7E-450C-A0FD-F2389254448F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\Tests\Tests.csproj", "{818BB2D2-37E3-48C5-958F-B604BA59B73B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B8D2EE1F-BB7E-450C-A0FD-F2389254448F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D2EE1F-BB7E-450C-A0FD-F2389254448F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D2EE1F-BB7E-450C-A0FD-F2389254448F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818BB2D2-37E3-48C5-958F-B604BA59B73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818BB2D2-37E3-48C5-958F-B604BA59B73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818BB2D2-37E3-48C5-958F-B604BA59B73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818BB2D2-37E3-48C5-958F-B604BA59B73B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

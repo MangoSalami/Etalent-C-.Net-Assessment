@@ -7,7 +7,7 @@ namespace Etalent_C__.Net_Assessment.Repo
     {
         Task<IEnumerable<BankAccount>> GetAccountsByHolderId(int holderId);
         Task<BankAccount?> GetAccountByAccountNumber(int accountId);
-        Task<bool> Withdraw(int accountId, decimal amount);
+        Task<WithdrawDTO> Withdraw(int accountId, decimal amount);
         Task<LoginResponseDTO?> Login(string email);
     }
 }
