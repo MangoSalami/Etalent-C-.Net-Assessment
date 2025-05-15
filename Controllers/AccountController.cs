@@ -25,13 +25,13 @@ public class AccountController : ControllerBase
     public async Task<IActionResult> GetAccounts(int holderId) { 
       return  Ok(await _repo.GetAccountsByHolderId(holderId));
     }
-  
+    [Authorize]
     [HttpPost("/account")]
     public async Task<IActionResult> GetByAccountBuyAccNumber([FromBody] AccountDTO accountnumber)
     {
         return Ok(await _repo.GetAccountByAccountNumber(accountnumber.AccountNumber??0));
     }
-
+    [Authorize]
     [HttpPost("/withdraw")]
     public async Task<IActionResult> Withdraw([FromBody] WithdrawRequestDTO withdraw)
     {   var results=await _repo.Withdraw(withdraw.AccountNumber ?? 0, withdraw.amount??0);
