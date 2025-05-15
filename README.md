@@ -6,13 +6,16 @@ This is a simple .NET Core Web API developed as part of the Etalent C# assessmen
 # HOW TO RUN Application
      pull the code
      remove current migrations 
-           run on Terminal 
+          -- run on Terminal 
           : rm -r Migrations
---Create new migrations
-    run on Terminal 
-           dotnet ef migrations add InitialCreate
-           dotnet ef database update
-RUN THE APPLICATION
+     Create new migration
+          --run on Terminal
+          dotnet ef migrations add InitialCreate
+          dotnet ef database update
+#RUN THE APPLICATION
+IF USING VSCODE
+  run   Terminal
+     : dotnet run
 
 # HOW TO RUN TESTS
     run on Terminal 
