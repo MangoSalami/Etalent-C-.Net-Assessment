@@ -12,7 +12,7 @@ This is a simple .NET Core Web API developed as part of the Etalent C# assessmen
           --run on Terminal
           dotnet ef migrations add InitialCreate
           dotnet ef database update
-#RUN THE APPLICATION
+# RUN THE APPLICATION
 IF USING VSCODE
   run   Terminal
      : dotnet run
